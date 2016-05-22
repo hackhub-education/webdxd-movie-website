@@ -1,0 +1,132 @@
+/*default style*/
+html {
+  background: url(../img/background.jpg);
+  background-size: cover;
+  font-size: 14px;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+/*helper classes*/
+.center {
+  text-align: center;
+}
+
+.red {
+  color: red;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.white {
+  color: white;
+}
+
+/*other style*/
+
+.nav-bar li {
+  display: inline-block;
+}
+
+.nav-bar {
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+.nav-bar li {
+  border: 1px solid #fff;
+  margin: 10px;
+  /*space between a and another object*/
+  padding: 10px;
+  /*space between text content and border*/
+  transition: background-color .5s linear;
+}
+
+.nav-bar li:hover {
+  background-color: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+
+.nav-logo {
+  width: 50px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.home-title {
+  font-family: 'Oleo Script', cursive;
+  font-size: 2.5rem;
+}
+
+.posters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.posters div {
+  width: 30%;
+  margin: 0 1%;
+  border: 5px solid white;
+  display: inline-block;
+  position: relative;
+  transition: width .3s linear, margin .3s linear;
+}
+
+.posters div:hover {
+  width: 32%;
+  margin: 0;
+}
+
+.posters div img {
+  width: 100%;
+  filter: brightness(70%);
+  -webkit-filter: brightness(70%);
+}
+
+.posters div h3 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  transform: translateY(-50%);
+}
+
+footer {
+  color: white;
+  background-color: rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+footer ul {
+  margin: 0;
+  padding: 20px 0;
+}
+
+footer ul li {
+  display: inline-block;
+  margin: 10px;
+}
+
