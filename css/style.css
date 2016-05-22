@@ -200,8 +200,32 @@ footer ul li {
 }
 
 
+/* media query for responsive design */
+@media(max-width: 941px) {
+  .posters div {
+    width: 45%;
+    margin-bottom: 20px;
+  }
 
+  .posters div:hover {
+    width: 44%;
+  }
+}
 
+@media(max-width: 500px) {
+  .posters div {
+    width: 95%;
+  }
+
+  .posters div:hover {
+    width: 97%;
+  }
+
+  .posters div h3 {
+    font-size: 4rem;
+    font-weight: 100;
+  }
+}
 
 
 
