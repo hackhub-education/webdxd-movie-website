@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | WebDxD Movies</title>
+  <link href='https://fonts.googleapis.com/css?family=Oleo+Script:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <img class="nav-logo" src="img/icon.png" alt="Logo">
+    <ul class="nav-bar">
+      <a href="index.html"><li>Home</li></a>
+      <a href="ticket.html"><li>Ticket</li></a>
+      <a href="company.html"><li>About</li></a>
+      <a href="contact.html"><li>Contact</li></a>
+    </ul>
+  </nav>
+
+  <form class="contact-form" action="#" method="POST">
+    <h1 class="center">Contact Us</h1>
+    
+    <!-- normal input -->
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="email" placeholder="Email">
+    <input type="text" name="phone" placeholder="Phone Number">
+
+    <!-- dropdown menu -->
+    <select name="type">
+      <option value="general-questions">General Questions</option>
+      <option value="pricing">Pricing</option>
+    </select>
+
+    <!-- radio -->
+    <label for="gender">Gender:</label>
+    <input type="radio" name="gender" value="male">
+    <label>Male</label>
+    <input type="radio" name="gender" value="female">
+    <label>Female</label>
+    <input type="radio" name="gender" value="other">
+    <label>Other</label>
+
+    <!-- paragraph -->
+    <textarea name="message" placeholder="Message"></textarea>
+
+    <!-- checkbox -->
+    <input type="checkbox" name="consent"><label for="consent"> I have read terms and conditions.</label>
+
+    <!-- submit button -->
+    <input type="submit" value="Send">
+
+  </form>
+
+</body>
+</html>
