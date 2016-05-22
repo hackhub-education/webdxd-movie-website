@@ -5,6 +5,10 @@ html {
   font-size: 14px;
 }
 
+body {
+  background-color: transparent;
+}
+
 nav {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
@@ -18,6 +22,10 @@ nav {
 a {
   color: #fff;
   text-decoration: none;
+}
+
+a:focus, a:hover {
+  color: white;
 }
 
 h1 {
@@ -185,7 +193,7 @@ footer ul li {
   border-color: #29B2FF;
   color: white;
   cursor: pointer;
-  font-weight: 100;
+  font-weight: 200;
   transition: background-color .5s linear;
 }
 
@@ -197,6 +205,9 @@ footer ul li {
 
 .contact-form {
   margin-top: 5rem;
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
