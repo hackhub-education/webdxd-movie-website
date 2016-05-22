@@ -32,6 +32,15 @@ button {
   border-radius: 5px;
 }
 
+input, select, textarea {
+  padding: 5px;
+  border: 1px solid #D4D4D4;
+  border-radius: 5px;
+  /*width: 200px;*/
+  display: block;
+  margin: 5px auto;
+}
+
 /*helper classes*/
 .center {
   text-align: center;
@@ -54,7 +63,11 @@ button {
   margin-right: auto;
 }
 
-/*other s: ;            tyle*/
+.inline {
+  display: inline-block;
+}
+
+/*other style*/
 
 .nav-bar li {
   display: inline-block;

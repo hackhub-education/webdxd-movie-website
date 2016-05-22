@@ -19,7 +19,7 @@
     </ul>
   </nav>
 
-  <form class="contact-form" action="#" method="POST">
+  <form class="contact-form center" action="#" method="POST">
     <h1 class="center">Contact Us</h1>
     
     <!-- normal input -->
@@ -35,21 +35,24 @@
 
     <!-- radio -->
     <label for="gender">Gender:</label>
-    <input type="radio" name="gender" value="male">
+    <br>
+    <input class="inline" type="radio" name="gender" value="male">
     <label>Male</label>
-    <input type="radio" name="gender" value="female">
+    <br>
+    <input class="inline" type="radio" name="gender" value="female">
     <label>Female</label>
-    <input type="radio" name="gender" value="other">
+    <br>
+    <input class="inline" type="radio" name="gender" value="other">
     <label>Other</label>
 
     <!-- paragraph -->
     <textarea name="message" placeholder="Message"></textarea>
 
     <!-- checkbox -->
-    <input type="checkbox" name="consent"><label for="consent"> I have read terms and conditions.</label>
+    <input class="inline" type="checkbox" name="consent"><label for="consent"> I have read terms and conditions.</label>
 
     <!-- submit button -->
-    <input type="submit" value="Send">
+    <input class="primary-btn" type="submit" value="Send">
 
   </form>
 
