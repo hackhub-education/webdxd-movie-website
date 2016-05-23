@@ -9,14 +9,50 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav>
-    <img class="nav-logo" src="img/icon.png" alt="Logo">
-    <ul class="nav-bar">
-      <a href="index.html"><li>Home</li></a>
-      <a href="ticket.html"><li>Ticket</li></a>
-      <a href="company.html"><li>About</li></a>
-      <a href="contact.html"><li>Contact</li></a>
-    </ul>
+  <nav class="navbar navbar-inverse">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img class="nav-logo" src="img/icon.png" alt="Logo"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ticket.html">Ticket</a></li>
+        <li><a href="company.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
   </nav>
+
+  <div class="container about-content">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <img class="full-width" src="img/a01.png">
+      <h4 class="member-name center">Bob</h4>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <img class="full-width" src="img/a02.png">
+      <h4 class="member-name center">John</h4>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <img class="full-width" src="img/a03.png">
+      <h4 class="member-name center">Tracy</h4>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <img class="full-width" src="img/a04.png">
+      <h4 class="member-name center">Leon</h4>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <img class="full-width" src="img/a05.png">
+      <h4 class="member-name center">Neo</h4>
+    </div>
+  </div>
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
