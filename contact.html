@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | WebDxD Movies</title>
+  <link href='https://fonts.googleapis.com/css?family=Oleo+Script:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <img class="nav-logo" src="img/icon.png" alt="Logo">
+    <ul class="nav-bar">
+      <a href="index.html"><li>Home</li></a>
+      <a href="ticket.html"><li>Ticket</li></a>
+      <a href="company.html"><li>About</li></a>
+      <a href="contact.html"><li>Contact</li></a>
+    </ul>
+  </nav>
+
+  <form class="contact-form center" action="#" method="POST">
+    <h1 class="center">Contact Us</h1>
+    
+    <!-- normal input -->
+    <input class="form-control" type="text" name="name" placeholder="Name">
+    <input class="form-control" type="text" name="email" placeholder="Email">
+    <input class="form-control" type="text" name="phone" placeholder="Phone Number">
+
+    <!-- dropdown menu -->
+    <select class="form-control" name="type">
+      <option value="general-questions">General Questions</option>
+      <option value="pricing">Pricing</option>
+    </select>
+
+    <!-- radio -->
+    <label for="gender">Gender</label>
+    <br>
+    <label class="radio-inline">
+      <input type="radio" name="gender" value="male"> Male
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="gender" value="female"> Female
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="gender" value="other"> Other
+    </label>
+
+    <!-- paragraph -->
+    <textarea class="form-control" rows="5" name="message" placeholder="Message"></textarea>
+
+    <!-- checkbox -->
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="consent" value="true">
+        I have read terms and condition.
+      </label>
+    </div>
+
+    <!-- submit button -->
+    <input class="btn btn-danger btn-lg btn-block" type="submit" value="Send">
+
+  </form>
+
+</body>
+</html>

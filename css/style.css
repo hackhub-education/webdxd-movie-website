@@ -5,6 +5,10 @@ html {
   font-size: 14px;
 }
 
+body {
+  background-color: transparent;
+}
+
 nav {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
@@ -12,6 +16,7 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 99;
+  top: 0;
 }
 
 a {
@@ -19,8 +24,29 @@ a {
   text-decoration: none;
 }
 
+a:focus, a:hover {
+  color: white;
+}
+
 h1 {
   font-weight: normal;
+}
+
+button {
+  font-size: 1rem;
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+input, select, textarea {
+  padding: 5px;
+  border: 1px solid #D4D4D4;
+  border-radius: 5px;
+  /*width: 200px;*/
+  display: block;
+  margin: 5px auto;
 }
 
 /*helper classes*/
@@ -40,7 +66,21 @@ h1 {
   color: white;
 }
 
+.hcenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inline {
+  display: inline-block;
+}
+
 /*other style*/
+
+.navbar {
+  height: auto;
+  border-radius: 0;
+}
 
 .nav-bar li {
   display: inline-block;
@@ -67,7 +107,7 @@ h1 {
 }
 
 .nav-logo {
-  width: 50px;
+  width: 40px;
   margin-left: 10px;
   margin-top: 5px;
 }
@@ -129,4 +169,91 @@ footer ul li {
   display: inline-block;
   margin: 10px;
 }
+
+.company-title {
+  color: red;
+}
+
+/*ticket style*/
+.ticket-table {
+  margin-top: 5rem;
+}
+
+.ticket-table table {
+  border-collapse: collapse;
+}
+
+.ticket-table td, .ticket-table th {
+  border: 1px solid black;
+  padding: 20px;
+  text-align: center;
+}
+
+.ticket-table th {
+  background-color: rgba(255,255,255,0.3)
+}
+
+.primary-btn {
+  background-color: #29B2FF;
+  border-color: #29B2FF;
+  color: white;
+  cursor: pointer;
+  font-weight: 200;
+  transition: background-color .5s linear;
+}
+
+.primary-btn:hover {
+  background-color: #0E81C1;
+}
+
+/*contact page style*/
+
+.contact-form {
+  margin-top: 5rem;
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-content {
+  margin-top: 5rem;
+}
+
+.navbar-brand {
+  padding-top: 5px;
+}
+
+.navbar-brand .nav-logo {
+  margin: 0;
+}
+
+
+/* media query for responsive design */
+@media(max-width: 941px) {
+  .posters div {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+
+  .posters div:hover {
+    width: 44%;
+  }
+}
+
+@media(max-width: 500px) {
+  .posters div {
+    width: 95%;
+  }
+
+  .posters div:hover {
+    width: 97%;
+  }
+
+  .posters div h3 {
+    font-size: 4rem;
+    font-weight: 100;
+  }
+}
+
+
 
