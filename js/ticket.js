@@ -1,8 +1,11 @@
 var buttonClicked;
 
 $('.btn-buy').click(function(event){
+  $('input').removeClass('input-invalid');
+  $('.text-danger').remove();
   buttonClicked = event.target;
   var movieName = $(event.target).parent().parent().find('.movie-name').text();
+  $('#movie_id').val($(event.target).parent().parent().find('.hidden').text());
   $('#buy-ticket-modal .modal-header').html('<h5>Buy ' + movieName + ' Ticket</h5>');
 });
 
@@ -15,18 +18,15 @@ function checkInvalid(user, attribute) {
   }
 }
 
-
 $('#buy-ticket-btn').click(function(event) {
   var user = {
     first_name: $('#first_name').val(),
     last_name: $('#last_name').val(),
-    phone: $('#phone').val()
+    phone: $('#phone').val(),
+    movie_id: $('#movie_id').val()
   };
-
   $('input').removeClass('input-invalid');
-
   $('.text-danger').remove();
-  
   if (checkInvalid(user, 'first_name')) {
     return;
   }
@@ -44,17 +44,6 @@ $('#buy-ticket-btn').click(function(event) {
       $(buttonClicked).text("Sold Out").prop('disabled', 'disabled').addClass('btn-disabled').removeClass('primary-btn btn-buy');
     }
   }
-
   $('#buy-ticket-modal').modal('hide');
-
   $('input[type="text"]').val("");
-
 });
-
-
-
-
-
-
-
-
