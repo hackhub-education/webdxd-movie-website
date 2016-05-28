@@ -4,7 +4,7 @@ $('.btn-buy').click(function(event){
   $('input').removeClass('input-invalid');
   $('.text-danger').remove();
   buttonClicked = event.target;
-  var movieRow = $(event.target).parent().parent();
+  var movieRow = $(buttonClicked).parent().parent();
   var movieName = movieRow.find('.movie-name').text();
   $('#movie_id').val(movieRow.attr('id'));
   $('#buy-ticket-modal .modal-header').html('<h5>Buy ' + movieName + ' Ticket</h5>');
@@ -28,23 +28,18 @@ $('#buy-ticket-btn').click(function(event) {
   };
   $('input').removeClass('input-invalid');
   $('.text-danger').remove();
-  if (checkInvalid(user, 'first_name')) {
-    return;
-  }
-  if (checkInvalid(user, 'last_name')) {
-    return;
-  }
-  if (checkInvalid(user, 'phone')) {
-    return;
-  }
-  console.log(user);
-  var newTicketLeft = $(buttonClicked).parent().prev().text() - 1;
-  if (newTicketLeft >= 0) {
-    $(buttonClicked).parent().prev().text(newTicketLeft);
-    if (newTicketLeft === 0) {
-      $(buttonClicked).text("Sold Out").prop('disabled', 'disabled').addClass('btn-disabled').removeClass('primary-btn btn-buy');
+  if (!checkInvalid(user, 'first_name') 
+    && !checkInvalid(user, 'last_name') 
+    && !checkInvalid(user, 'phone')) {
+    console.log(user);
+    var newTicketLeft = $(buttonClicked).parent().prev().text() - 1;
+    if (newTicketLeft >= 0) {
+      $(buttonClicked).parent().prev().text(newTicketLeft);
+      if (newTicketLeft === 0) {
+        $(buttonClicked).text("Sold Out").prop('disabled', 'disabled').addClass('btn-disabled').removeClass('primary-btn btn-buy');
+      }
     }
+    $('#buy-ticket-modal').modal('hide');
+    $('input[type="text"]').val("");
   }
-  $('#buy-ticket-modal').modal('hide');
-  $('input[type="text"]').val("");
 });
