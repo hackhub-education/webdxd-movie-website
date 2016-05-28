@@ -1,3 +1,36 @@
+var movieList = [
+  {
+    id: "m0",
+    name: "Avengers",
+    price: 5,
+    date: "2015/06/07",
+    ticketLeft: 10
+  },
+  {
+    id: "m1",
+    name: "Star Wars",
+    price: 9,
+    date: "2016/04/07",
+    ticketLeft: 18
+  },
+  {
+    id: "m2",
+    name: "Titanic",
+    price: 3,
+    date: "1996/06/19",
+    ticketLeft: 7
+  }
+];
+
+for (var i = 0; i < movieList.length; i++) {
+  var currentTr = $('<tr>').attr('id', movieList[i].id).appendTo('.hcenter');
+  $('<td>').addClass('movie-name').text(movieList[i].name).appendTo(currentTr);
+  $('<td>').text('$' + movieList[i].price).appendTo(currentTr);
+  $('<td>').text(movieList[i].date).appendTo(currentTr);
+  $('<td>').text(movieList[i].ticketLeft).appendTo(currentTr);
+  $('<td>').html('<button class="primary-btn btn-buy" data-toggle="modal" data-target="#buy-ticket-modal">Buy Ticket</button>').appendTo(currentTr);
+}
+
 var buttonClicked;
 
 $('.btn-buy').click(function(event){
