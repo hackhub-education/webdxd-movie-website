@@ -32,32 +32,51 @@
         </tr>
         <tr>
         <!-- table row 2 -->
-          <td>Avengers</td>
+          <td class="movie-name">Avengers</td>
           <td>$10</td>
           <td>2015/07/01</td>
           <td>85</td>
-          <td><button class="primary-btn btn-buy">Buy Ticket</button></td>
+          <td><button class="primary-btn btn-buy" data-toggle="modal" data-target="#buy-ticket-modal">Buy Ticket</button></td>
         </tr>
         <tr>
         <!-- table row 3 -->
-          <td>Start Wars</td>
+          <td class="movie-name">Start Wars</td>
           <td>$8</td>
           <td>2016/05/05</td>
           <td>51</td>
-          <td><button class="primary-btn btn-buy">Buy Ticket</button></td>
+          <td><button class="primary-btn btn-buy" data-toggle="modal" data-target="#buy-ticket-modal">Buy Ticket</button></td>
         </tr>
         <tr>
         <!-- table row 4 -->
-          <td>Titanic</td>
+          <td class="movie-name">Titanic</td>
           <td>$5</td>
           <td>1996/05/05</td>
           <td>7</td>
-          <td><button class="primary-btn btn-buy">Buy Ticket</button></td>
+          <td><button class="primary-btn btn-buy" data-toggle="modal" data-target="#buy-ticket-modal">Buy Ticket</button></td>
         </tr>
     </table>
   </div>
 
+  <div class="modal fade" id="buy-ticket-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>Buy Ticket</h5>
+        </div>
+            <div class="modal-body">
+              <input class="form-control" type="text" id="first_name" name="first_name" placeholder="First Name">
+              <input class="form-control" type="text" id="last_name" name="last_name" placeholder="Last Name">
+              <input class="form-control" type="text" id="phone" name="phone" placeholder="Phone Number">
+            </div>
+            <div class="modal-footer">
+              <input type="button" class="btn btn-primary" id="buy-ticket-btn" value="Submit">
+            </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
   <script src="js/ticket.js"></script>
 
 </body>
