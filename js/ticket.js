@@ -6,6 +6,15 @@ $('.btn-buy').click(function(event){
   $('#buy-ticket-modal .modal-header').html('<h5>Buy ' + movieName + ' Ticket</h5>');
 });
 
+function checkInvalid(user, attribute) {
+  if (user[attribute] == "") {
+    $('#' + attribute).addClass('input-invalid').after('<p class="text-danger">Please complete ' + attribute + ' field</p>');
+    return true;
+  } else {
+    return false;
+  }
+}
+
 
 $('#buy-ticket-btn').click(function(event) {
   var user = {
@@ -13,8 +22,21 @@ $('#buy-ticket-btn').click(function(event) {
     last_name: $('#last_name').val(),
     phone: $('#phone').val()
   };
-  console.log(user);
 
+  $('input').removeClass('input-invalid');
+
+  $('.text-danger').remove();
+  
+  if (checkInvalid(user, 'first_name')) {
+    return;
+  }
+  if (checkInvalid(user, 'last_name')) {
+    return;
+  }
+  if (checkInvalid(user, 'phone')) {
+    return;
+  }
+  console.log(user);
   var newTicketLeft = $(buttonClicked).parent().prev().text() - 1;
   if (newTicketLeft >= 0) {
     $(buttonClicked).parent().prev().text(newTicketLeft);
@@ -24,6 +46,8 @@ $('#buy-ticket-btn').click(function(event) {
   }
 
   $('#buy-ticket-modal').modal('hide');
+
+  $('input[type="text"]').val("");
 
 });
 

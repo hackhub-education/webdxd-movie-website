@@ -231,6 +231,11 @@ footer ul li {
   background-color: #ccc;
 }
 
+.input-invalid {
+  background-color: #ff9999;
+  border: 1px solid red;
+}
+
 
 /* media query for responsive design */
 @media(max-width: 941px) {
