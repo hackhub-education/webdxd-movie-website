@@ -4,8 +4,9 @@ $('.btn-buy').click(function(event){
   $('input').removeClass('input-invalid');
   $('.text-danger').remove();
   buttonClicked = event.target;
-  var movieName = $(event.target).parent().parent().find('.movie-name').text();
-  $('#movie_id').val($(event.target).parent().parent().find('.hidden').text());
+  var movieRow = $(event.target).parent().parent();
+  var movieName = movieRow.find('.movie-name').text();
+  $('#movie_id').val(movieRow.attr('id'));
   $('#buy-ticket-modal .modal-header').html('<h5>Buy ' + movieName + ' Ticket</h5>');
 });
 
