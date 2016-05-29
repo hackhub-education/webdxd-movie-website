@@ -2,7 +2,7 @@ var myAppRef = new Firebase("https://webdxd-movies.firebaseio.com/");
 
 var movieRef = new Firebase("https://webdxd-movies.firebaseio.com/movies")
 
-// myAppRef.set({movies: movieList});
+var userRef = new Firebase("https://webdxd-movies.firebaseio.com/users")
 
 myAppRef.child("movies").on("value", function(snapshot) {
   var movieList = snapshot.val();
@@ -12,7 +12,7 @@ myAppRef.child("movies").on("value", function(snapshot) {
   $('.data-row').remove();
 
   for (var key in movieList) {
-    var currentTr = $('<tr>').addClass('data-row').attr('id', movieList[key].id).appendTo('.hcenter');
+    var currentTr = $('<tr>').addClass('data-row').attr('id', key).appendTo('.hcenter');
     $('<td>').addClass('movie-name').text(movieList[key].name).appendTo(currentTr);
     $('<td>').text('$' + movieList[key].price).appendTo(currentTr);
     $('<td>').text(movieList[key].date).appendTo(currentTr);
@@ -25,7 +25,7 @@ myAppRef.child("movies").on("value", function(snapshot) {
 
 var buttonClicked;
 
-$('.btn-buy').click(function(event){
+$('.hcenter').on('click', '.btn-buy', function(event){
   $('input').removeClass('input-invalid');
   $('.text-danger').remove();
   buttonClicked = event.target;
@@ -56,7 +56,7 @@ $('#buy-ticket-btn').click(function(event) {
   if (!checkInvalid(user, 'first_name') 
     && !checkInvalid(user, 'last_name') 
     && !checkInvalid(user, 'phone')) {
-    console.log(user);
+    userRef.push(user);
     var newTicketLeft = $(buttonClicked).parent().prev().text() - 1;
     if (newTicketLeft >= 0) {
       $(buttonClicked).parent().prev().text(newTicketLeft);
