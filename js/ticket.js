@@ -19,6 +19,13 @@ var movieList = [
     price: 3,
     date: "1996/06/19",
     ticketLeft: 7
+  },
+  {
+    id: "m3",
+    name: "X-men",
+    price: 12,
+    date: "2016/05/27",
+    ticketLeft: 10
   }
 ];
 
