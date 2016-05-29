@@ -75,6 +75,10 @@ input, select, textarea {
   display: inline-block;
 }
 
+.block {
+  display: block;
+}
+
 /*other style*/
 
 .navbar {

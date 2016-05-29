@@ -24,35 +24,18 @@
     <h1 class="center">Upcoming Shows</h1>
     <table class="hcenter">
         <tr>
-        <!-- table row 1 -->
           <th>Name</th>
           <th>Price</th>
           <th>Date</th>
           <th>Ticket Left</th>
           <th>Purchase</th>
         </tr>
-        <!-- <tr id="m0">
-          <td class="movie-name">Avengers</td>
-          <td>$10</td>
-          <td>2015/07/01</td>
-          <td>85</td>
-          <td><button class="primary-btn btn-buy" data-toggle="modal" data-target="#buy-ticket-modal">Buy Ticket</button></td>
-        </tr>
-        <tr id="m1">
-          <td class="movie-name">Start Wars</td>
-          <td>$8</td>
-          <td>2016/05/05</td>
-          <td>51</td>
-          <td><button class="primary-btn btn-buy" data-toggle="modal" data-target="#buy-ticket-modal">Buy Ticket</button></td>
-        </tr>
-        <tr id="m2">
-          <td class="movie-name">Titanic</td>
-          <td>$5</td>
-          <td>1996/05/05</td>
-          <td>7</td>
-          <td><button class="primary-btn btn-buy" data-toggle="modal" data-target="#buy-ticket-modal">Buy Ticket</button></td>
-        </tr> -->
     </table>
+    <input type="text" id="movie-name" placeholder="Movie Name">
+    <input type="number" id="price" placeholder="Movie Price">
+    <input type="date" id="date" placeholder="Release Date">
+    <input type="number" id="ticket-left" placeholder="Ticket Left">
+    <input class="btn btn-primary center block" type="button" id="submit-movie" value="Submit">
   </div>
 
   <div class="modal fade" id="buy-ticket-modal">

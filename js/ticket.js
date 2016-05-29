@@ -2,14 +2,6 @@ var myAppRef = new Firebase("https://webdxd-movies.firebaseio.com/");
 
 var movieRef = new Firebase("https://webdxd-movies.firebaseio.com/movies")
 
-// movieRef.push({
-//   name: "Dead Pool",
-//   date: "2016/05/01",
-//   price: 10,
-//   ticketLeft: 21,
-//   id: "m3"
-// });
-
 // myAppRef.set({movies: movieList});
 
 myAppRef.child("movies").on("value", function(snapshot) {
@@ -76,3 +68,16 @@ $('#buy-ticket-btn').click(function(event) {
     $('input[type="text"]').val("");
   }
 });
+
+
+$('#submit-movie').click(function(){
+  var movie = {
+    name: $('#movie-name').val(),
+    price: $('#price').val(),
+    date: $('#date').val(),
+    ticketLeft: $('#ticket-left').val()
+  }
+  movieRef.push(movie);
+  $('#movie-name, #price, #date, #ticket-left').val("");
+}); 
+
