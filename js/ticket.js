@@ -1,20 +1,30 @@
-var moviesRef = new Firebase("https://webdxd-movies.firebaseio.com/");
+var myAppRef = new Firebase("https://webdxd-movies.firebaseio.com/");
 
-var movieList;
+var movieRef = new Firebase("https://webdxd-movies.firebaseio.com/movies")
 
-// moviesRef.set({movies: movieList});
+// movieRef.push({
+//   name: "Dead Pool",
+//   date: "2016/05/01",
+//   price: 10,
+//   ticketLeft: 21,
+//   id: "m3"
+// });
 
-moviesRef.child("movies").on("value", function(snapshot) {
-  movieList = snapshot.val();
+// myAppRef.set({movies: movieList});
+
+myAppRef.child("movies").on("value", function(snapshot) {
+  var movieList = snapshot.val();
+
+  console.log(movieList);
 
   $('.data-row').remove();
 
-  for (var i = 0; i < movieList.length; i++) {
-    var currentTr = $('<tr>').addClass('data-row').attr('id', movieList[i].id).appendTo('.hcenter');
-    $('<td>').addClass('movie-name').text(movieList[i].name).appendTo(currentTr);
-    $('<td>').text('$' + movieList[i].price).appendTo(currentTr);
-    $('<td>').text(movieList[i].date).appendTo(currentTr);
-    $('<td>').text(movieList[i].ticketLeft).appendTo(currentTr);
+  for (var key in movieList) {
+    var currentTr = $('<tr>').addClass('data-row').attr('id', movieList[key].id).appendTo('.hcenter');
+    $('<td>').addClass('movie-name').text(movieList[key].name).appendTo(currentTr);
+    $('<td>').text('$' + movieList[key].price).appendTo(currentTr);
+    $('<td>').text(movieList[key].date).appendTo(currentTr);
+    $('<td>').text(movieList[key].ticketLeft).appendTo(currentTr);
     $('<td>').html('<button class="primary-btn btn-buy" data-toggle="modal" data-target="#buy-ticket-modal">Buy Ticket</button>').appendTo(currentTr);
   }
 });
