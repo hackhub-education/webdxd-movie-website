@@ -6,11 +6,7 @@ var userRef = new Firebase("https://webdxd-movies.firebaseio.com/users")
 
 myAppRef.child("movies").on("value", function(snapshot) {
   var movieList = snapshot.val();
-
-  console.log(movieList);
-
   $('.data-row').remove();
-
   for (var key in movieList) {
     var currentTr = $('<tr>').addClass('data-row').attr('id', key).appendTo('.hcenter');
     $('<td>').addClass('movie-name').text(movieList[key].name).appendTo(currentTr);
@@ -59,7 +55,10 @@ $('#buy-ticket-btn').click(function(event) {
     userRef.push(user);
     var newTicketLeft = $(buttonClicked).parent().prev().text() - 1;
     if (newTicketLeft >= 0) {
-      $(buttonClicked).parent().prev().text(newTicketLeft);
+      var currentMovieRef = new Firebase('https://webdxd-movies.firebaseio.com/movies/' + user.movie_id);
+      currentMovieRef.update({
+        ticketLeft: newTicketLeft
+      });
       if (newTicketLeft === 0) {
         $(buttonClicked).text("Sold Out").prop('disabled', 'disabled').addClass('btn-disabled').removeClass('primary-btn btn-buy');
       }
